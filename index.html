@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Marching Demo</title>
+    <script src="js/vector.js"></script>
+    <script src="js/obstacle.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        #angle-span {
+            margin: 0 10px;
+        }
+
+        input[type=range] {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="1000px" height="800px" style="border: 1px solid black;" id="c"></canvas><br/>
+    Angle: <input type="range" id="angle" min="0" max="360"><span id="angle-span">0 deg</span><br/>
+    Speed: <input type="range" id="speed" min="1" max="100" value="50"><span id="speed-span">100 %</span><br/>
+    <button id="pause">PAUSE</button>
+</body>
+</html>
