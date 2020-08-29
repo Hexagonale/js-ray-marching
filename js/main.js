@@ -1,13 +1,16 @@
 let angle = 0;
 let speed = 50;
-let delta = 0;
 let start = 0;
 
-document.addEventListener('DOMContentLoaded', () => setInterval(update, 1000 / 75));
+document.addEventListener('DOMContentLoaded', setup);
+
+function setup() {
+    window.requestAnimationFrame(update);
+}
 
 function update() {
-    delta = Date.now() - start;
-    start = Date.now();
+    const delta = performance.now() - start;
+    window.requestAnimationFrame(update);
 
     if(!changing) {
         if(!paused) angle += (delta / 1000) * (speed / 100);
@@ -20,6 +23,8 @@ function update() {
     getDistance(angle);
 
     draw();
+
+    start = performance.now();
 }
 
 function getDistance(angle) {
